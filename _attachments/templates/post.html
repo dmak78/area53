@@ -1,0 +1,39 @@
+<div class="avatar small">
+
+                    <img src="/lib/img/hp/avatars/150/opt-out-user.jpg" />
+
+            </div>
+            <div class="source">
+                <p class="relative-time"><abbr class="timeago" title="<%= data.created_at %>"><%= data.created_at %></abbr></p>
+                <ul class="user-names">
+                    <li class="commenter">
+                        <% if (data.author.first_name) { %>
+                            <a href="/profile/#" class="user-name"><%= data.author.first_name %>&nbsp;<%= data.author.last_name %></a>
+                        <% } else { %>
+                            <a href="<%= data.author_id %>" class="user-name"><%= data.author.name %></a>
+                        <% } %>            
+                     </li>
+                </ul>
+            </div>
+            
+            <p class="status">
+                <%= data.body %> 
+            </p>
+
+            <ul class="tag-list">
+            <% _.each(data.mentions, function (mention) { %>
+                <li class="tag"><%= mention.username %></li>
+             <%   });%>
+            </ul>
+            <div class="status-buttons">
+                <a href="#" class="button like <%= data.is_liked ? 'liked' : '' %>"><%= data.is_liked ? 'Liked' : 'Like' %></a>
+                <% if(data.like_count > 0) { %>
+                <a href="#like-people-modal" class="likePeopleModal">
+                    <span class="likeCount"><%= data.like_count %></span>&nbsp;<span class="likePeople"><%= data.like_count > 1 ? 'people like' : 'person likes' %></span>&nbsp;this
+                </a>
+                <% } %>
+                <div class="moderation">
+                    <a href="#" class="icon hot-topic" title="Pin this">Pin</a>
+                    <a href="#" class="icon post delete" title="Delete this">Delete</a>
+                </div>
+            </div>

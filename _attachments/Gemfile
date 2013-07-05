@@ -1,0 +1,8 @@
+source 'http://rubygems.org'
+
+group :development do
+  gem "compass", "~> 0.13.alpha.0"
+  gem "susy", "~> 1.0.4"
+  gem "foreman", "~> 0.60.2"
+  gem "rb-fsevent", "~> 0.9.1"
+end

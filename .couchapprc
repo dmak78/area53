@@ -1,0 +1,13 @@
+{
+  "env": {
+    "default": {
+      "db": "http://localhost:5984/area53"
+    },
+    "test": {
+      "db": "http://localhost:5984/area53"
+    },
+    "production": {
+      "db": "https://app16358878.heroku:8SIBnDWEabLuvNp88A6EMqwp@app16358878.heroku.cloudant.com/area53"
+    }
+  }
+}

@@ -1,0 +1,36 @@
+<div class="status-content">
+    <div class="avatar extra-small">
+        <% if (data.author) { %>
+            <img src="<%= data.author.avatar_url %>" alt="">
+        <% } else { %>
+            <img src="/lib/img/hp/avatars/150/opt-out-user.jpg" />
+        <% } %>
+    </div>
+    <div class="source">
+        <p class="relative-time"><abbr class="timeago" title="<%= data.created_at %>"><%= data.created_at %></abbr></p>
+            <ul class="user-names">
+                <li>
+                    <a href="/profile/<%= data.author_id %>" class="user-name">
+                        <span class="communicator-presence"> 
+                        </span>
+                        <% if(typeof(data.author !== 'undefined')){ %>
+                        <%= data.author.name %>
+                        <% } %>
+                    </a>
+                </li>     
+            </ul>
+        </div>
+
+        <p class="status">
+                <%= data.body %>
+        </p>
+
+        <div class="status-buttons">
+            <div class="moderation">
+                <a href="#" class="icon comment flag " data-id="">Flag</a>
+                <a href="#" class="icon comment delete" data-id="">Delete</a>
+            </div>
+        </div>
+    </div>
+
+
